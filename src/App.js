@@ -1,24 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import NotPages from "./components/NotPages";
-import ListAll from "./components/ListAll";
-import Home from "./components/Home";
-import Navbars from "./components/Navbars";
-import ConsultItem from "./components/ConsultItem";
-import ListPostAll from "./components/ListPostAll";
+import { AuthProvider } from "./firebase/contexts/AuthContext";
+import AppRouter from "./routers/AppRouter";
 
+//por tiempo no alcance, pero la idea es tener el authProvider o temas de authenticacion token o demas
 
 function App() {
   return (
-    <Router>
-      <Navbars />
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-        <Route exact path="/ListAll" element={<ListAll/>} />
-        <Route exact path="/ListPostAll" element={<ListPostAll/>} />
-        <Route exact path="/item/:id" element={<ConsultItem/>} />
-        <Route path="*" element={<NotPages/>} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <AppRouter/>
+    </AuthProvider>
   );
 }
 
