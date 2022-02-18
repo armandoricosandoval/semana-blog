@@ -34,9 +34,8 @@ const ListAll = (props) => {
       <Row className='mt-4'> 
           {data?.data?.map((user,i) => (
             <>
-             <Col xs={3} className='text-center mt-4'>
-             <img 
-             key={i}
+             <Col key={i} xs={3} className='text-center mt-4'>
+             <img              
              src={user.picture}
              alt="profile"
              style={{
@@ -47,7 +46,7 @@ const ListAll = (props) => {
              }}
               />
              </Col>
-             <Col xs={3} className='mt-4'>
+             <Col key={user.id} xs={3} className='mt-4'>
                    <Card style={{maxWidth:'360px'}} className='mx-auto p-4'>
                         <p className='text-center'><b>Nombre: </b>{user.firstName}</p> 
                         <p className='text-center'><b>Titulo: </b>{user.title}</p>
