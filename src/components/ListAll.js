@@ -17,9 +17,9 @@ const ListAll = (props) => {
 
   
   useEffect(() => {
-    axios.get('https://dummyapi.io/data/v1/user?limit=10', {
+    axios.get(process.env.REACT_APP_URL_ALL_USER, {
     headers: {
-      'app-id': '620fdb656c0669e254d27427'
+      'app-id': process.env.REACT_APP_KEY
     }
   }).then(data=>{console.log(data.data)
     setData(data.data)  

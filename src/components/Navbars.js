@@ -11,7 +11,8 @@ export default function Navbars() {
     <Navbar.Brand href="/">ARMANDO RICO</Navbar.Brand>
     <Nav className="me-auto">
       <Nav.Link href="/">INICIO</Nav.Link>
-      <Nav.Link href="/ListAll">LISTA ARTICULOS</Nav.Link>
+      <Nav.Link href="/ListPostAll">LISTA POST</Nav.Link>
+      <Nav.Link href="/ListAll">LISTA USERS</Nav.Link>
     </Nav>
     </Container>
   </Navbar>
