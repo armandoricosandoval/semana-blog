@@ -49,11 +49,10 @@ const ListAll = (props) => {
              <Col key={user.id} xs={3} className='mt-4'>
                    <Card style={{maxWidth:'360px'}} className='mx-auto p-4'>
                         <p className='text-center'><b>Nombre: </b>{user.firstName}</p> 
-                        <p className='text-center'><b>Titulo: </b>{user.title}</p>
-                        
+                        <p className='text-center'><b>Titulo: </b>{user.title}</p>                        
                         <Button 
                         as={Link} 
-                        to='/perfilUsuario'
+                        to={`/user/${user.id}`}
                         variant="success">
                          Ver Perfil Completo
                          </Button>

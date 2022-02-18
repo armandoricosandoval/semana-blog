@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/ListAll" element={<ListAll/>} />
         <Route exact path="/ListPostAll" element={<ListPostAll/>} />
-        <Route exact path="/item" element={<ConsultItem/>} />
+        <Route exact path="/item/:id" element={<ConsultItem/>} />
         <Route path="*" element={<NotPages/>} />
       </Routes>
     </Router>

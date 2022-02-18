@@ -78,7 +78,7 @@
   cursor: pointer;
   transition: 0.4s ease;
 }
-.card-post .info button:hover {
+.card-post .info .button-total:hover {
   background: dodgerblue;
   color: white;
 }
