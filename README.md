@@ -15,4 +15,7 @@ Para Iniciar debes:
 
 
 Gracias!!!
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9ff5e706a645270be4921320ca3ea76417070bbb
