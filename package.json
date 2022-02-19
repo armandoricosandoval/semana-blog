@@ -1,12 +1,14 @@
 {
   "name": "pruebafnc",
   "version": "0.1.0",
+  "homepage": "https://armandoricosandoval.github.io/semana-blog",
   "private": true,
   "dependencies": {
     "axios": "^0.25.0",
     "bootstrap": "^5.1.3",
     "cors": "^2.8.5",
     "firebase": "^9.6.7",
+    "gh-pages": "^3.2.3",
     "install": "^0.13.0",
     "npm": "^8.3.2",
     "react": "^17.0.2",
@@ -16,13 +18,16 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-with-firebase-auth": "^1.3.11",
+    "reactfire": "^4.0.0-rc.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
