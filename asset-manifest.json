@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/semana-blog/static/css/main.455bf333.css",
+    "main.js": "/semana-blog/static/js/main.65b107f2.js",
+    "index.html": "/semana-blog/index.html",
+    "main.455bf333.css.map": "/semana-blog/static/css/main.455bf333.css.map",
+    "main.65b107f2.js.map": "/semana-blog/static/js/main.65b107f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.455bf333.css",
+    "static/js/main.65b107f2.js"
+  ]
+}
