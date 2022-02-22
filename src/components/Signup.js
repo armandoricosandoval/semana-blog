@@ -20,22 +20,25 @@ export default function Signup() {
       return setError("Passwords do not match")
     }
 
-    try {
+  
       setError("")
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
-      .then(res=>{console.log(res.user.uid)})
-      history.push("/")
-    } catch {
-      setError("Failed to create an account")
-    }
-
+      .then(res=>{
+        history("/login")
+      })
+      .catch(err=>{
+        setError("error",err)
+        console.log(err)
+      })
+   
+      
     setLoading(false)
   }
 
   return (
     <Container >
-      <Card>
+      <Card className='mt-4'>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}

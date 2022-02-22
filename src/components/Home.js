@@ -12,7 +12,7 @@ const Home = () => {
              <p>¡Aquí podras Revisar el contenido de la prueba!</p>
              <p>Armando Rico Sandoval</p>
              <div>
-                   <Link to='/listAll'>Ingresa</Link>                   
+                   <Link to='/login'>Ingresa</Link>                   
              </div>
         </Col>
         <Col>

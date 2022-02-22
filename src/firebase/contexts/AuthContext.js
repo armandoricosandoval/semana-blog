@@ -1,30 +1,36 @@
 import React, { useContext, useState, useEffect } from "react";
 import { firebaseAppAuth } from "../firebase";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 
 const AuthContext = React.createContext();
+
 
 export function useAuth() {
   return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
+
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
+  const auth = getAuth();
+  
 
-  function signup(email, password) {
-    return firebaseAppAuth.createUserWithEmailAndPassword(email, password);
+
+  function signup(email, password) {  
+    return createUserWithEmailAndPassword(auth, email, password)
   }
 
   function login(email, password) {
-    return firebaseAppAuth.signInWithEmailAndPassword(email, password);
+    return signInWithEmailAndPassword(auth,email, password);
   }
 
   function logout() {
-    return firebaseAppAuth.signOut();
+    return signOut(auth);
   }
 
   function resetPassword(email) {
-    return firebaseAppAuth.sendPasswordResetEmail(email);
+    return sendPasswordResetEmail(auth,email);
   }
 
   function updateEmail(email) {

@@ -22,9 +22,9 @@ const AppRouter = () => {
                   <Navbars />
                   <Routes>
                         <Route exact path="/" element={<Home />} />
-                        <Route exact path="/signup" component={Signup} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/forgot-password" component={ForgotPassword} />
+                        <Route exact path="/signup"  element={<Signup/>} />
+                        <Route exact path="/login"  element={<Login/>} />
+                        <Route exact path="/forgot-password"  element={<ForgotPassword/>} />
                         <Route exact path="/ListAll" element={<ListAll />} />
                         <Route exact path="/ListPostAll" element={<ListPostAll />} />
                         <Route exact path="/item/:id" element={<ConsultItem />} />

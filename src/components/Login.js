@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert,Container  } from "react-bootstrap"
 import { useAuth } from "../firebase/contexts/AuthContext"
 import { Link, useNavigate } from "react-router-dom"
 
-export default function Login( ) {
+const Login =()=> {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
@@ -12,23 +12,25 @@ export default function Login( ) {
   const history = useNavigate()
 
   async function handleSubmit(e) {
-    e.preventDefault()
-
-    try {
+    e.preventDefault()   
       setError("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
-    } catch {
-      setError("Failed to log in")
-    }
-
+      .then(res=>{      
+      console.log('res :', res);
+        localStorage.setItem('user',JSON.stringify(res.user.email));
+        localStorage.setItem('token',JSON.stringify(res.user.accessToken));
+        history("/ListPostAll")
+      }).catch(err=>{
+      console.log('err :', err);
+        setError("Failed to log in")
+      })
     setLoading(false)
   }
 
   return (
     <Container>
-      <Card>
+      <Card className='mt-4'>
         <Card.Body>
           <h2 className="text-center mb-4">Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -56,3 +58,5 @@ export default function Login( ) {
     </Container >
   )
 }
+
+export default Login;
